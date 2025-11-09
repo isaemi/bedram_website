@@ -3,14 +3,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const galleryItems = [
-  '/public/image/main.png',
-  '/public/image/main.png',
-  '/public/image/main.png',
-  '/public/image/main.png',
-  '/public/image/main.png',
-  '/public/image/main.png',
-  '/public/image/main.png',
-  '/public/image/main.png',
+  '/image/main.png',
+  '/image/main.png',
+  '/image/main.png',
+  '/image/main.png',
+  '/image/main.png',
+  '/image/main.png',
+  '/image/main.png',
+  '/image/main.png',
 ];
 
 interface GalleryImageProps {

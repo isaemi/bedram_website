@@ -31,7 +31,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url('/image/main.png')`,
-          filter: "grayscale(100%) brightness(0.9)",
+          /*filter: "grayscale(100%) brightness(0.9)",*/
         }}
       />
 

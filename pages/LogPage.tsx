@@ -69,7 +69,7 @@ const LogPage = () => {
             className="w-full border-2 border-cyan-400/40 rounded-lg overflow-hidden"
           >
             <iframe
-              src="/log.pdf"
+              src="/bedlam_log.pdf"
               className="w-full h-[60vh]"
               title="Playtest Log PDF"
             ></iframe>
@@ -77,7 +77,7 @@ const LogPage = () => {
 
                     {/* Download Button */}
           <motion.a
-            href="/log.pdf"
+            href="/bedlam_log.pdf"
             download
             whileHover={{ scale: 1.05 }}
             className="cursor-pointer px-8 py-3 border-2 border-cyan-400 text-cyan-400 
