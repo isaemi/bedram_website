@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navItems = [
   { name: 'Home', id: 'hero' },
   { name: 'About', id: 'about' },
-  { name: 'Lore', id: 'gameplay' },
-  { name: 'Cards', id: 'cards' },
+  { name: 'Mechanics', id: 'gameplay' },
+  { name: 'Assets', id: 'cards' },
   { name: 'Gallery', id: 'gallery' },
   { name: 'Logs', link: '/log' },
   { name: 'Rules', link: '/rulebook' },
@@ -26,7 +26,7 @@ const NavLink: React.FC<NavLinkProps> = ({ id, name, link, onClick }) => {
     return (
       <RouterLink
         to={link}
-        className="relative group text-cyan-400 hover:text-white whitespace-nowrap text-glow-cyan text-lg uppercase tracking-wider"
+        className="relative group font-subheader text-cyan-400 hover:text-white whitespace-nowrap text-glow-nav text-2xl uppercase tracking-wider"
         onClick={onClick}
       >
         {name}
@@ -45,7 +45,7 @@ const NavLink: React.FC<NavLinkProps> = ({ id, name, link, onClick }) => {
     <a
       href={`#${id}`}
       onClick={handleClick}
-      className="relative group text-cyan-400 hover:text-white whitespace-nowrap text-glow-cyan text-lg uppercase tracking-wider"
+      className="relative group text-cyan-400 hover:text-white whitespace-nowrap text-glow-nav text-2xl uppercase tracking-wider"
     >
       {name}
       <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-magenta-500 transition-all duration-300 group-hover:w-full"></span>
@@ -72,7 +72,7 @@ const Navbar = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* center NAV */}
-        <div className="flex items-center justify-center h-20 relative">
+        <div className="flex font-bold items-center font-subheader justify-center h-20 relative">
 
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map(item => (
@@ -85,7 +85,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden absolute right-5 top-1/2 -translate-y-1/2
                        text-cyan-400 border-2 border-cyan-400 rounded-full 
-                       w-10 h-10 flex items-center justify-center text-2xl z-[200]"
+                       w-10 h-10 flex items-center justify-center text-xl z-[200]"
           >
             {isOpen ? 'X' : '≡'}
           </button>

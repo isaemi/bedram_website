@@ -31,7 +31,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url('/image/main.png')`,
-        }}
+          /*filter: 'grayscale(100%)'      */  }}
       />
 
       <div className="z-10 mt-10 text-center flex flex-col items-center">
@@ -53,7 +53,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="mt-16 mb-8 text-xl md:text-2xl text-orange-600 uppercase tracking-[0.2em]"
+          className="mt-16 mb-8 font-subheader font-bold text-xl md:text-2xl text-orange-600 uppercase tracking-[0.2em]"
         >
           The ocean swallowed the Earth. Hope faded.
           <br />You are amid, the last voice in the storm.
@@ -63,12 +63,12 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="text-gray-400 mb-10 text-lg md:text-xl leading-relaxed font-mono max-w-6xl mx-auto"
+          className="text-gray-400 mb-10 text-lg md:text-xl leading-relaxed max-w-6xl mx-auto"
         >
-          A thousand years after the collapse, Earth is no longer what it was.
-          Now called Bedlam, ninety five percent of the planet is swallowed beneath endless storms and saltwater.
-          Humanity survives on floating cities called chukwari.
-          At the center stands Babel, a monumental alien tower reaching skyward and sea ward.
+          A thousand years after the collapse, Earth is no longer what it was.<br></br>
+          Now called Bedlam, ninety five percent of the planet is swallowed beneath endless storms and saltwater.<br></br>
+          Humanity survives on floating cities called chukwari.<br></br>
+          At the center stands Babel, a monumental alien tower reaching skyward and sea ward.<br></br>
           You are the Amid, guiding your people through the coming Pralay.
         </motion.p>
 
@@ -82,7 +82,7 @@ const HeroSection = () => {
             to="/rulebook"
             className="px-10 mt-5 py-3 rounded-lg border-2 border-amber-400 bg-amber-400 
                        shadow-[0_0_20px_rgba(255,210,100,0.9)] text-black uppercase text-xl 
-                       tracking-widest font-display hover:shadow-[0_0_35px_rgba(255,220,100,0.9)]
+                       tracking-widest hover:shadow-[0_0_35px_rgba(255,220,100,0.9)]
                        transition-all duration-300"
           >
             Rules
@@ -91,7 +91,7 @@ const HeroSection = () => {
           <Link
             to="/play"
             className="px-10 mt-5 py-3 rounded-lg border-2 border-amber-400 text-amber-400 
-                       uppercase text-xl tracking-widest font-display hover:shadow-[0_0_35px_rgba(255,220,100,0.9)]
+                       uppercase text-xl tracking-widest hover:shadow-[0_0_35px_rgba(255,220,100,0.9)]
                        transition-all duration-300"
           >
             Video

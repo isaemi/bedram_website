@@ -7,10 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BEDLAM | Survive the Noise</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Orbitron:wght@900&display=swap"
-    rel="stylesheet">
   <style>
     @keyframes flicker {
 
@@ -128,18 +124,24 @@
     body {
       background-color: #000;
       color: #fff;
-      font-family: 'Chakra Petch', sans-serif;
+      font-family: BodyFont;
       cursor: none;
     }
 
     .font-display {
-      font-family: 'Orbitron', sans-serif;
+      font-family: HeaderFont;
+    }
+
+    .font-subheader {
+      font-family: SubheaderFont;
     }
 
     .text-glow-cyan {
       text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
     }
-
+    .text-glow-nav{
+      text-shadow: 0 0 3px #00ffff, 0 0 8px #00ffff;
+    }
     .text-glow-magenta {
       text-shadow: 0 0 5px #ff00aa, 0 0 10px #ff00aa, 0 0 20px #ff00aa, 0 0 40px #ff00aa;
     }
@@ -206,6 +208,27 @@
 
     .neon-scroll::-webkit-scrollbar-thumb:hover {
       background: #7ffcff;
+    }
+
+    @font-face {
+      font-family: "HeaderFont";
+      src: url("/fonts/header.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "BodyFont";
+      src: url("/fonts/body.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "SubheaderFont";
+      src: url("/fonts/subheader.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
     }
   </style>
 

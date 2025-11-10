@@ -2,16 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const galleryItems = [
-  '/image/main.png',
-  '/image/main.png',
-  '/image/main.png',
-  '/image/main.png',
-  '/image/main.png',
-  '/image/main.png',
-  '/image/main.png',
-  '/image/main.png',
-];
+const galleryItems = Array.from({length:10}, (_, i) =>`/image/gallery/gallery${i+1}.png`)
 
 interface GalleryImageProps {
   src: string;
@@ -28,8 +19,10 @@ const GalleryImage: React.FC<GalleryImageProps> = ({ src, index }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{
         borderColor: '#ff00aa',
-        boxShadow: '0 0 25px #ff00aa'
-      }}
+        boxShadow: '0 0 25px #ff00aa',
+        scale: 2,
+        zIndex: 50
+      }}      
     >
       <motion.img
         src={src}

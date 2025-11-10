@@ -4,41 +4,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const cardData: Record<string, string[]> = {
-  Kiseki: Array(8).fill('/image/main.png'),
-  Expedition: Array(8).fill('/image/main.png'),
-  Random: Array(8).fill('/image/main.png'),
-  Resources: Array(8).fill('/image/main.png'),
-  Weapons: Array(8).fill('/image/main.png'),
-  Crackerjack: Array(8).fill('/image/main.png'),
-  Redaz: Array(8).fill('/image/main.png'),
-  Rakyat: Array(8).fill('/image/main.png'),
-  Tokens: Array(8).fill('/image/main.png'),
-  Dice: Array(8).fill('/image/main.png'),
-  Boards: Array(8).fill('/image/main.png'),
+  Kiseki: Array.from({ length: 1 }, (_, i) => `/image/cards/kiseki/kiseki${i + 1}.png`),
+  Chukwari: Array.from({ length: 4 }, (_, i) => `/image/cards/chukwari/chukwari${i + 1}.png`),
+  Salvage: Array.from({ length: 5 }, (_, i) => `/image/cards/salvage/salvage${i + 1}.png`),
+  UI: Array.from({ length: 10 }, (_, i) => `/image/ui/ui${i + 1}.png`),
+  Brand: Array.from({ length: 8 }, (_, i) => `/image/cards/weapons${i + 1}.png`)
 };
 
-
-/* [Saemi] Change it after add image files
-
-// auto-generate card paths (card1.png ~ card88.png)
-const generateCards = (start: number, count: number) => {
-  return Array.from({ length: count }, (_, i) => `/image/card${start + i}.png`);
-};
-
-// 11 categories × 8 images each = 88 images total
-const cardData: Record<string, string[]> = {
-  Kiseki: generateCards(1, 8),
-  Expedition: generateCards(9, 8),
-  Random: generateCards(17, 8),
-  Resources: generateCards(25, 8),
-  Weapons: generateCards(33, 8),
-  Crackerjack: generateCards(41, 8),
-  Redaz: generateCards(49, 8),
-  Rakyat: generateCards(57, 8),
-  Tokens: generateCards(65, 8),
-  Dice: generateCards(73, 8),
-  Boards: generateCards(81, 8),
-};*/
 
 const categories = Object.keys(cardData);
 
@@ -57,13 +29,15 @@ const CardImage: React.FC<CardImageProps> = ({ src, index }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{
         borderColor: '#ff00aa',
-        boxShadow: '0 0 25px #ff00aa'
+        boxShadow: '0 0 25px #ff00aa',
+        scale: 1.5,
+        zIndex: 50
       }}
     >
       <motion.img
         src={src}
         alt="card"
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className="w-full h-full object-cover transition-transform duration-500"
         style={{ filter: 'saturate(1.2) contrast(1.1) brightness(0.8)' }}
       />
       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all duration-300"></div>
@@ -88,7 +62,7 @@ const CardSection = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 1 }}
         >
-          Cards
+          Assets
         </motion.h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -107,7 +81,7 @@ const CardSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {cardData[selected].map((src, index) => (
             <CardImage key={index} src={src} index={index} />
           ))}

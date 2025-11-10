@@ -2,11 +2,29 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const aboutFeatures = [
-  { description: "A survival strategy game where you lead a chukwa through storms, raids, and politics. Your goal is simple. Keep your people alive." },
-  { description: "Hope is rare in Bedlam. Every turn forces a choice. Trust or betray. Risk or retreat. No path is safe and no plan lasts long." },
-  { description: "Take actions, explore ruins, trade, negotiate, or fight other players. Use your rakyat traits to your advantage. Time your moves to survive the next Pralay." },
-  { description: "Every session plays out differently. Random events, council meetings, raids, and Kiseki rolls keep the world unstable and full of tension." }
+{ description: "THE COMMUNE OF FANIN and its ardent rakyat are a rather young chukwa: the long-fought outcome of rebellion against the formerly autocratic and corrupt Suzerainty of Fanin. Now seeking resources for post-revolutionary reconstruction, the chukwa is now struggling to gain intercontinental recognition, facing alienation and hostility." },
+{ description: "THE UNITED VILLS OF BARRON is a theocratic isolationist chukwa that has amassed notoriety for its violent and belligerent raids across Bedlam. They worship their deity “John Barron,” an orange-skinned humanoid figure that is said to be the reincarnation of God, promoting imperial expansion by divine right." },
+{ description: "THE REPUBLIC OF DELORÉ exists as Bedlam’s latest attempt at liberal democracy. Located on the far southern reaches of the Waters Between, the mercantilist rakyat has begun making waves in the greater known world through shrewd trade deals and astute diplomatic alliances, drawing individuals in with a faint promise of hope." },
+{ description: "THE WAVELENGTH TERRITORIES is a loosely organized federation of nations that lie geographically in the far northern stretches of Greater Bedlam. Despite largely staying away from the rest of civilization, the rakyat is known far and wide through the reliable and advanced tech they produce, sparking rumours of toying with dark and forbidden magic." }
+
 ];
+
+const boldNames = (text: string) => {
+  const targets = [
+    "THE COMMUNE OF FANIN",
+    "THE UNITED VILLS OF BARRON",
+    "THE REPUBLIC OF DELORÉ",
+    "THE WAVELENGTH TERRITORIES"
+  ];
+
+  let result = text;
+  targets.forEach(name => {
+    const bold = `<span class="font-bold">${name}</span>`;
+    result = result.replace(name, bold);
+  });
+
+  return result;
+};
 
 const AnimatedText = ({ text, className }: { text: string; className?: string }) => {
   return (
@@ -64,20 +82,26 @@ const AboutCard = ({ description, index }: { description?: string, index?: numbe
 const AboutSection = () => {
   return (
     <div className="container mx-auto text-center px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center">
+         
+     <div
+  className="absolute inset-0 bg-[url('/image/mechanics.png')] bg-no-repeat bg-cover bg-center z-0"
+  style={{filter: 'grayscale(50%) brightness(0.5)'}}
+></div>
 
       <AnimatedText
-        text="The World of Bedlam"
-        className="font-display mt-10 text-2xl md:text-6xl uppercase text-glow-cyan mb-8 tracking-widest"
+        text="BEDLAM, AND THE WATERS BETWEEN"
+        className="font-display mt-5 text-2xl md:text-6xl uppercase text-glow-cyan mb-8 tracking-widest"
       />
 
       <motion.p
-        className="max-w-4xl mt-10 text-center text-gray-400 text-lg md:text-xl lg:text-2xl leading-relaxed"
+        className="max-w-6xl z-10 mt-5 text-center text-gray-400 text-lg md:text-xl lg:text-2xl leading-relaxed"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.6, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        A thousand years after the collapse, Earth is no longer the same. Now called Bedlam, ninety five percent of the planet is covered by saltwater and storms that never end. People survive on floating cities called chukwa, built long ago by hands no one remembers. At the center of this world stands Babel, a massive alien tower that reaches up into the sky and down into the deep sea. You are the Amid, the leader of a fishermen chukwa, trying to guide your people through the next Pralay.
+        There exists no longer faith that sustains. Hope is scarce and mercy is fading fast. How could it not have come to this? Xiān slumbers in Their heaven, Their skies silent. What remains hangs in the thick, humid air. You feel it. The push to live. To keep going. Forward. Across endless fields of saltwater, deep in the maze of subterranean ruins, lie truths long hidden. Maybe it was love all along. That thing called compassion and humanity that our grandparents’ grandparents gave their lives for. Maybe that is the key to escaping our misery, the key to breaking the cycle of Pralay. Maybe. Or maybe not. The grip on the 11 gun in your right hand and the diveaxe in your left tightens, and you grit your teeth as you step onto the mezzanine to face your rakyat. They cheer and howl for their Amid, not from belief or passion, but from need. They have nothing else. Same as you. And you answer them the only way you can. Diveaxe raised high, you promise them survival. You promise them life. Hope.
+
       </motion.p>
 
       <motion.div
@@ -85,7 +109,7 @@ const AboutSection = () => {
         whileInView={{ width: "60%" }}
         transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="h-[2px] mt-10 bg-gradient-to-r from-transparent via-magenta-500 to-transparent"
+        className="h-[2px] mt-5 bg-gradient-to-r from-transparent via-magenta-500 to-transparent"
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowLeftCircle, FiDownload } from 'react-icons/fi';
@@ -26,7 +26,19 @@ const GlitchText = ({ text }: { text: string }) => {
   );
 };
 
+const logData = {
+  log: `/bedlam_log.pdf`,
+  playtest: `/playtest_log.pdf`,
+  flowchart: `/flowchart.pdf`,
+  monoboard: `/monoboard.pdf`,
+  concept: `/concept.pdf`
+}
+
+const categories = Object.keys(logData);
+
 const LogPage = () => {
+  const [selected, setSelected] = useState('log');
+
   return (
     <div className="w-full min-h-screen bg-black flex flex-col items-center justify-start p-4 py-20 overflow-y-auto relative">
 
@@ -46,6 +58,7 @@ const LogPage = () => {
           <span className="hidden md:inline">Return to Main Site</span>
         </motion.div>
       </Link>
+      
 
       {/* Content */}
       <AnimatePresence mode="wait">
@@ -60,7 +73,21 @@ const LogPage = () => {
           {/* Title */}
           <GlitchText text="Project Logs" />
 
-
+          <div className="flex flex-wrap justify-center gap-4">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelected(cat)}
+              className={`px-4 py-1 rounded-full uppercase text-sm tracking-wide border transition-all ${
+                selected === cat
+                  ? 'border-cyan-400 shadow-[0_0_10px_#00ffff]'
+                  : 'border-cyan-400 text-gray-300 opacity-70 hover:opacity-100'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
           {/* PDF Viewer */}
           <motion.div
@@ -69,7 +96,7 @@ const LogPage = () => {
             className="w-full border-2 border-cyan-400/40 rounded-lg overflow-hidden"
           >
             <iframe
-              src="/bedlam_log.pdf"
+              src={logData[selected]}
               className="w-full h-[60vh]"
               title="Playtest Log PDF"
             ></iframe>
@@ -77,7 +104,7 @@ const LogPage = () => {
 
                     {/* Download Button */}
           <motion.a
-            href="/bedlam_log.pdf"
+            href={logData[selected]}
             download
             whileHover={{ scale: 1.05 }}
             className="cursor-pointer px-8 py-3 border-2 border-cyan-400 text-cyan-400 

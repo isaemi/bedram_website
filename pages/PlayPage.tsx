@@ -69,7 +69,7 @@ const VideoPage = () => {
             {/* Replace the src URL below with your actual video link */}
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+              src="https://www.youtube.com/embed/yZhppDsfI7Q"
               title="Bedlam Trailer"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
