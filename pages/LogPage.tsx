@@ -31,7 +31,7 @@ const logData = {
   playtest: `/playtest_log.pdf`,
   flowchart: `/flowchart.pdf`,
   monoboard: `/monoboard.pdf`,
-  concept: `/concept.pdf`
+  "brand guide": `/brandguide.pdf`
 }
 
 const categories = Object.keys(logData);

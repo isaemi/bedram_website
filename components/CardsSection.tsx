@@ -7,8 +7,7 @@ const cardData: Record<string, string[]> = {
   Kiseki: Array.from({ length: 1 }, (_, i) => `/image/cards/kiseki/kiseki${i + 1}.png`),
   Chukwari: Array.from({ length: 4 }, (_, i) => `/image/cards/chukwari/chukwari${i + 1}.png`),
   Salvage: Array.from({ length: 5 }, (_, i) => `/image/cards/salvage/salvage${i + 1}.png`),
-  UI: Array.from({ length: 10 }, (_, i) => `/image/ui/ui${i + 1}.png`),
-  Brand: Array.from({ length: 8 }, (_, i) => `/image/cards/weapons${i + 1}.png`)
+  UI: Array.from({ length: 10 }, (_, i) => `/image/ui/ui${i + 1}.png`)
 };
 
 
