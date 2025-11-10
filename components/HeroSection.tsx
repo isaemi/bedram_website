@@ -31,19 +31,23 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url('/image/main.png')`,
-          /*filter: "grayscale(100%) brightness(0.9)",*/
         }}
       />
 
       <div className="z-10 mt-10 text-center flex flex-col items-center">
-        <motion.h1
+        {/* Logo instead of title */}
+        <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.5, type: "spring" }}
-          className="font-display text-5xl sm:text-7xl md:text-[8rem] lg:text-[12rem] text-white uppercase tracking-widest flicker"
+          className="mt-10"
         >
-          <GlitchText text="BEDLAM" />
-        </motion.h1>
+          <img
+            src="/image/logo.png"
+            alt="logo"
+            className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[650px] object-contain"
+          />
+        </motion.div>
 
         <motion.h2
           initial={{ opacity: 0 }}
@@ -51,7 +55,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 1.5 }}
           className="mt-16 mb-8 text-xl md:text-2xl text-orange-600 uppercase tracking-[0.2em]"
         >
-          The ocean swallowed the Earth. Hope faded.  
+          The ocean swallowed the Earth. Hope faded.
           <br />You are amid, the last voice in the storm.
         </motion.h2>
 
@@ -63,12 +67,11 @@ const HeroSection = () => {
         >
           A thousand years after the collapse, Earth is no longer what it was.
           Now called Bedlam, ninety five percent of the planet is swallowed beneath endless storms and saltwater.
-          Humanity survives on floating cities called chukwari.  
-          At the center stands Babel, a monumental alien tower reaching skyward and sea ward.  
+          Humanity survives on floating cities called chukwari.
+          At the center stands Babel, a monumental alien tower reaching skyward and sea ward.
           You are the Amid, guiding your people through the coming Pralay.
         </motion.p>
 
-        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
