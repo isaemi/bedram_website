@@ -53,7 +53,7 @@ const GameplaySection = () => {
             className="absolute inset-0 z-0 bg-cover bg-center"
             style={{ 
                 backgroundImage: `url('/image/mechanics.png')`, 
-                filter: 'grayscale(1) brightness(0.2)',
+                filter: 'grayscale(50%) brightness(0.5)',
                 y: y
             }}
         />
